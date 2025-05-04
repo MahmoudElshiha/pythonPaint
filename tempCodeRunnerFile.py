@@ -1,30 +1,41 @@
-while (2 * ry2 * x) <= (2 * rx2 * y):
-            points.extend([
-                QPoint(xc + x, yc + y),
-                QPoint(xc - x, yc + y),
-                QPoint(xc + x, yc - y),
-                QPoint(xc - x, yc - y)
-            ])
-            x += 1
-            if p1 < 0:
-                p1 += 2 * ry2 * x + ry2
-            else:
-                y -= 1
-                p1 += 2 * ry2 * x - 2 * rx2 * y + ry2
+        pen_radio = QRadioButton()
+        pen_radio.setIcon(QIcon("icons/pen.png"))
+        pen_radio.setIconSize(QSize(24, 24))
+        pen_radio.setToolTip("Pen")
+        self.tool_group.addButton(pen_radio, 0)
+        sidebar_layout.addWidget(pen_radio)
 
-        # Region 2
-        p2 = (ry2 * (x + 0.5) ** 2) + (rx2 * (y - 1) ** 2) - (rx2 * ry2)
-        while y >= 0:
-            points.extend([
-                QPoint(xc + x, yc + y),
-                QPoint(xc - x, yc + y),
-                QPoint(xc + x, yc - y),
-                QPoint(xc - x, yc - y)
-            ])
-            y -= 1
-            if p2 > 0:
-                p2 -= 2 * rx2 * y + rx2
-            else:
-                x += 1
-                p2 += 2 * ry2 * x - 2 * rx2 * y + rx2
-        return points
+        rect_radio = QRadioButton()
+        rect_radio.setIcon(QIcon("icons/rectangle.png"))
+        rect_radio.setIconSize(QSize(24, 24))
+        rect_radio.setToolTip("Rectangle")
+        self.tool_group.addButton(rect_radio, 1)
+        sidebar_layout.addWidget(rect_radio)
+
+        ellipse_radio = QRadioButton()
+        ellipse_radio.setIcon(QIcon("icons/ellipse.png"))
+        ellipse_radio.setIconSize(QSize(24, 24))
+        ellipse_radio.setToolTip("Ellipse")
+        self.tool_group.addButton(ellipse_radio, 2)
+        sidebar_layout.addWidget(ellipse_radio)
+
+        line_radio = QRadioButton()
+        line_radio.setIcon(QIcon("icons/line.png"))
+        line_radio.setIconSize(QSize(24, 24))
+        line_radio.setToolTip("Line")
+        self.tool_group.addButton(line_radio, 3)
+        sidebar_layout.addWidget(line_radio)
+
+        fill_radio = QRadioButton()
+        fill_radio.setIcon(QIcon("icons/fill.png"))
+        fill_radio.setIconSize(QSize(24, 24))
+        fill_radio.setToolTip("Fill")
+        self.tool_group.addButton(fill_radio, 4)
+        sidebar_layout.addWidget(fill_radio)
+
+        circle_radio = QRadioButton()
+        circle_radio.setIcon(QIcon("icons/circle.png"))
+        circle_radio.setIconSize(QSize(24, 24))
+        circle_radio.setToolTip("Circle")
+        self.tool_group.addButton(circle_radio, 5)
+        sidebar_layout.addWidget(circle_radio)
